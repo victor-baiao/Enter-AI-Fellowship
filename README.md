@@ -27,7 +27,7 @@ Conforme solicitado, esta seção detalha os desafios e as soluções aplicadas.
 ### Desafio 2: Variabilidade de Layout e Schemas Parciais
 
 - **Problema:** O mesmo `label` pode ter layouts levemente diferentes. Além disso, não conhecemos o `schema` completo de antemão, apenas partes dele.
-- **Solução:** O KB é projetado para "acumular conhecimento"[cite: 18].
+- **Solução:** O KB é projetado para "acumular conhecimento".
   - Quando um `label: "RG"` é visto pela primeira vez com `schema: {nome, nome_mae}`, o sistema aprende as regras para `nome` e `nome_mae`.
   - Quando o `label: "RG"` aparece de novo com `schema: {nome, nome_pai}`, o sistema já sabe como extrair `nome` (usando heurística) e só precisa usar o LLM para aprender a extrair `nome_pai`.
   - Isso otimiza o _contexto_ enviado ao LLM, pedindo apenas os campos que "faltam" em nosso KB, minimizando ainda mais o custo.
@@ -67,7 +67,7 @@ Esta solução é entregue como um endpoint de API construído com FastAPI, o qu
     ```
 
 3.  **Configure sua API Key da OpenAI:**
-    [cite_start](Você receberá uma API key com limite de budget [cite: 74])
+    (Você receberá uma API key com limite de budget)
 
     ```bash
     export OPENAI_API_KEY="SUA_API_KEY_AQUI"
